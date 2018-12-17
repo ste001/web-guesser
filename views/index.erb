@@ -1,8 +1,13 @@
 <html>
   <head></head>
   <body>
-    <p>
-    "The SECRET NUMBER is <%= random_number %>"
-    </p>
+    <form>
+      <input type="text" name="guess" />
+      <input type='submit' value='Guess!' />
+    </form>
+    <p><%= message %></p>
+    <% if message == "You got it right!"%>
+      <p>The SECRET NUMBER is <%= random_number %></p>
+    <%end%>
   </body>
 </html>
