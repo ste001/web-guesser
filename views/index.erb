@@ -19,7 +19,9 @@
     </form>
     <p><%= message %></p>
     <% if message == "You got it right!" %>
-      <p>The SECRET NUMBER is <%= random_number %></p>
+      <p>A new random number has been generated.</p>
+      <!--<p>The SECRET NUMBER is <%= random_number %></p>-->
     <% end %>
+    <p>Remaining guesses: <%= remaining_guesses %></p>
   </body>
 </html>
