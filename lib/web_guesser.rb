@@ -23,5 +23,6 @@ get '/' do
     @@remaining_guesses = 5
   end
   erb :index, :locals => {:random_number => settings.random_number,\
-     :message => message, :remaining_guesses => @@remaining_guesses}
+     :message => message, :remaining_guesses => @@remaining_guesses,\
+    :cheat => params["cheat"]}
 end
