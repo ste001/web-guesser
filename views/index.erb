@@ -1,13 +1,25 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        <% if message == "Way too low!" || message == "Way too high!" %>
+          background: red;
+        <% elsif message == "Too low!" || message == "Too high!" %>
+          background: #d85f75;
+        <% else %>
+          background: green;
+        <% end %>
+      }
+    </style>
+  </head>
   <body>
     <form>
       <input type="text" name="guess" />
       <input type='submit' value='Guess!' />
     </form>
     <p><%= message %></p>
-    <% if message == "You got it right!"%>
+    <% if message == "You got it right!" %>
       <p>The SECRET NUMBER is <%= random_number %></p>
-    <%end%>
+    <% end %>
   </body>
 </html>
