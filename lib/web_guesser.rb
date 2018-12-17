@@ -2,8 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 set :root, '../'
-
-random_number = rand(100)
+set :random_number, rand(100)
 
 def feedback random, guess
   return "Way too high!" if (guess > random + 5)
@@ -14,6 +13,6 @@ def feedback random, guess
 end
 
 get '/' do
-  message = feedback(random_number, params["guess"].to_i)
-  erb :index, :locals => {:random_number => random_number, :message => message}
+  message = feedback(settings.random_number, params["guess"].to_i)
+  erb :index, :locals => {:random_number => settings.random_number, :message => message}
 end
